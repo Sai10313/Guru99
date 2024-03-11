@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-21T11:36:27 IST" name="InetBankingV1" finished-at="2024-02-21T11:36:41 IST" duration-ms="14425">
+  <suite started-at="2024-03-11T11:56:00 IST" name="Guru Demo App" finished-at="2024-03-11T11:56:14 IST" duration-ms="13536">
     <groups>
     </groups>
-    <test started-at="2024-02-21T11:36:27 IST" name="Banking app Test" finished-at="2024-02-21T11:36:41 IST" duration-ms="14425">
-      <class name="com.inetbanking.testCases.TC_CustomStatementTest_014">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.inetbanking.testCases.TC_CustomStatementTest_014@6bbe85a8]" started-at="2024-02-21T11:36:27 IST" name="setup" finished-at="2024-02-21T11:36:35 IST" duration-ms="7601" status="PASS">
+    <test started-at="2024-03-11T11:56:00 IST" name="Banking Test" finished-at="2024-03-11T11:56:14 IST" duration-ms="13536">
+      <class name="com.inetbanking.testCases.TC_ChangePasswordTest_015">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.inetbanking.testCases.TC_ChangePasswordTest_015@7ef82753]" started-at="2024-03-11T11:56:01 IST" name="setup" finished-at="2024-03-11T11:56:07 IST" duration-ms="6249" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="loginApp()[pri:0, instance:com.inetbanking.testCases.TC_CustomStatementTest_014@6bbe85a8]" started-at="2024-02-21T11:36:35 IST" name="loginApp" finished-at="2024-02-21T11:36:37 IST" duration-ms="1889" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.inetbanking.testCases.TC_ChangePasswordTest_015@7ef82753]" started-at="2024-03-11T11:56:07 IST" name="login" finished-at="2024-03-11T11:56:12 IST" duration-ms="5662" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginApp -->
-        <test-method signature="customizedStatement()[pri:0, instance:com.inetbanking.testCases.TC_CustomStatementTest_014@6bbe85a8]" started-at="2024-02-21T11:36:37 IST" name="customizedStatement" finished-at="2024-02-21T11:36:41 IST" duration-ms="4346" status="PASS">
+        </test-method> <!-- login -->
+        <test-method signature="changePwdTest()[pri:0, instance:com.inetbanking.testCases.TC_ChangePasswordTest_015@7ef82753]" started-at="2024-03-11T11:56:12 IST" name="changePwdTest" finished-at="2024-03-11T11:56:14 IST" duration-ms="1090" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- customizedStatement -->
-      </class> <!-- com.inetbanking.testCases.TC_CustomStatementTest_014 -->
-    </test> <!-- Banking app Test -->
-  </suite> <!-- InetBankingV1 -->
+        </test-method> <!-- changePwdTest -->
+      </class> <!-- com.inetbanking.testCases.TC_ChangePasswordTest_015 -->
+    </test> <!-- Banking Test -->
+  </suite> <!-- Guru Demo App -->
 </testng-results>

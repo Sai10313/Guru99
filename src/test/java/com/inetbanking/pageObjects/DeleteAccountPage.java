@@ -3,14 +3,12 @@ package com.inetbanking.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class DeleteAccountPage {
 	
 	WebDriver ldriver;
-	
-	@FindBy(linkText="Delete Account")
-	WebElement clickonDeleteAccount;
 	
 	@FindBy(name="accountno")
 	WebElement accountNo;
@@ -18,6 +16,8 @@ public class DeleteAccountPage {
 	@FindBy(name="AccSubmit")
 	WebElement clickOnSubmit;
 	
+	@FindBy(how = How.LINK_TEXT, using = "Home")
+	WebElement backToHome;
 	
 	
 	
@@ -27,15 +27,15 @@ public class DeleteAccountPage {
 		PageFactory.initElements(rdriver, this);
 	}
 	
-	public void clickDeleteAccout()
-	{
-		clickonDeleteAccount.click();;
-	}
-	
 	public void setAccountNo(String acctNo)
 	{
 		accountNo.sendKeys(acctNo);
 	}
+	
+	public void clickHome()
+    {
+    	backToHome.click();
+    }
 	
 	public void submitBtn()
 	{

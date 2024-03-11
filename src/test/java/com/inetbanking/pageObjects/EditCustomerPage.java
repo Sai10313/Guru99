@@ -10,10 +10,7 @@ public class EditCustomerPage {
 	
 	WebDriver ldriver;
 	
-	@FindBy(how=How.LINK_TEXT,using="Edit Customer")
-	WebElement clickOnEdit;
-	
-	@FindBy(how=How.XPATH,using="//input[@name='cusid']")
+	@FindBy(how=How.NAME,using="accountno")
 	WebElement eneterId;
 	
 	@FindBy(how=How.XPATH,using="//input[@name='AccSubmit']")
@@ -40,15 +37,17 @@ public class EditCustomerPage {
 	@FindBy(how=How.XPATH,using="//input[@name='sub']")
 	WebElement enterSubmit;
 	
+	@FindBy(how = How.LINK_TEXT, using = "Home")
+	WebElement backToHome;
+	
+	
+	
 	public EditCustomerPage(WebDriver rdriver)
 	{
 		ldriver=rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
-	public void editCustomer()
-	{
-		clickOnEdit.click();
-	}
+	
 	
 	public void enterCustId(String custId)
 	{
@@ -98,6 +97,10 @@ public class EditCustomerPage {
 		eneterEmail.sendKeys(email);
 		
 	}
+	public void clickHome()
+    {
+    	backToHome.click();
+    }
 	
 	public void clickOnSubmit()
 	{

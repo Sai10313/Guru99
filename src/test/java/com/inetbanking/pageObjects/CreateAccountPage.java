@@ -3,6 +3,7 @@ package com.inetbanking.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import com.inetbanking.testCases.BaseClass;
@@ -22,8 +23,11 @@ WebDriver ldriver;
 	
 	@FindBy(name="button2")
 	WebElement createAccount;
-	@FindBy(linkText ="New Account")
-	WebElement clickOnNewAccount;
+	
+	@FindBy(how = How.LINK_TEXT, using = "Home")
+	WebElement backToHome;
+	
+	
 	
 	public CreateAccountPage(WebDriver rdriver)
 	{
@@ -44,14 +48,13 @@ WebDriver ldriver;
 	{
 		initAmount.sendKeys(amount);
 	}
-	
+	public void clickHome()
+    {
+    	backToHome.click();
+    }
 
 	public void clickCreateAccount() {
 		createAccount.click();
 	}
-	public void clickOnNewAccount()
-	{
-		clickOnNewAccount.click();
-	}
-
+	
 }

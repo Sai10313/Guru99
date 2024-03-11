@@ -15,8 +15,7 @@ public class AddCustomerPage {
 		PageFactory.initElements(rdriver, this);
 	}
 
-	@FindBy(how = How.XPATH, using = "//a[text()='New Customer']")
-	WebElement clickNewCustomer;
+	
 
 	@FindBy(how = How.XPATH, using = "//input[@name='name']")
 	WebElement name;
@@ -50,11 +49,14 @@ public class AddCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//input[@name='sub']")
 	WebElement submit;
+	
+	@FindBy(how = How.LINK_TEXT, using = "Home")
+	WebElement backToHome;
+	
+	@FindBy(how = How.LINK_TEXT, using = "Continue")
+	WebElement clickOnContinue;
 
-	public void addCustomer()
-	{
-		clickNewCustomer.click();
-	}
+	
 	public void custName(String cname)
 	{
 		name.sendKeys(cname);
@@ -102,5 +104,14 @@ public class AddCustomerPage {
     public void clickSubmit()
     {
     	submit.click();
+    }
+    public void clickHome()
+    {
+    	backToHome.click();
+    }
+    
+    public void clickContinue()
+    {
+    	clickOnContinue.click();
     }
 }

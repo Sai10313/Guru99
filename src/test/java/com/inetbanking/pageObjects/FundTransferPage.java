@@ -3,14 +3,13 @@ package com.inetbanking.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class FundTransferPage {
 	
     WebDriver ldriver;
 
-	@FindBy(linkText="Fund Transfer")
-	WebElement clickOnFundTransfer;
 	
 	@FindBy(name="payersaccount")
 	WebElement payer;
@@ -27,6 +26,9 @@ public class FundTransferPage {
 	@FindBy(name="AccSubmit")
 	WebElement submitBtn;
 	
+	@FindBy(how = How.LINK_TEXT, using = "Home")
+	WebElement backToHome;
+	
 	
 	public FundTransferPage(WebDriver rdriver)
 	{
@@ -34,10 +36,7 @@ public class FundTransferPage {
 		PageFactory.initElements(rdriver, this);
 	}
 	
-	public void clickFundTransfer()
-	{
-		clickOnFundTransfer.click();
-	}
+	
 	
 	public void setPayer(String payerAcct)
 	{
@@ -58,6 +57,11 @@ public class FundTransferPage {
 	{
 		description.sendKeys(desc);
 	}
+	
+	public void clickHome()
+    {
+    	backToHome.click();
+    }
 	
 	public void submitBtn()
 	{

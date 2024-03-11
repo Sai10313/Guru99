@@ -13,10 +13,7 @@ public class TC_LoginTestTDD_002 extends BaseClass {
 	public void loginTDD(String uname,String upwd) throws InterruptedException
 	{
 		LoginPage lp=new LoginPage(driver);
-		lp.setUserName(uname);
-		lp.setPassword(upwd);
-		lp.clickLogin();
-		
+		lp.login(userName, password);
 		if(isAlertPresent()==true)
 		{
 			driver.switchTo().alert().accept();

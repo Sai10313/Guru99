@@ -25,34 +25,34 @@ import com.inetbanking.utilities.ReadConfig;
 
 
 public class BaseClass {
-	
+
 	ReadConfig readConfig=new ReadConfig();
 	public static WebDriver driver;
-	
-	  public String url=readConfig.getApplicationUrl();
-	  public String userName=readConfig.getUsername(); 
-	  public String password=readConfig.getPassword();
+
+	public String url=readConfig.getApplicationUrl();
+	public String userName=readConfig.getUsername(); 
+	public String password=readConfig.getPassword();
 	public String browser=readConfig.getBrowserName();
 	public static Logger logger;
-	
-	
+
+
 	@BeforeClass
 	@Parameters("browser")
 	public void setup(String browser)
 	{
-		
+
 		if(browser.equals("chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", 
 					readConfig.getChromePath());
 			System.out.println(readConfig.getChromePath());
-			
+
 			driver=new ChromeDriver();	
 		}
 		else if(browser.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", 
 					readConfig.getChromePath());
-			 driver = new FirefoxDriver();
+			driver = new FirefoxDriver();
 		}
 		else if (browser.equals("ie")){
 			System.setProperty("webdriver.edge.driver", 
@@ -60,18 +60,18 @@ public class BaseClass {
 			System.out.println(readConfig.getEdgePath());
 			driver = new EdgeDriver();
 		}
-		
+
 		driver.manage().window().maximize();
 		driver.get(url); 
-		
-		
-		
+
+
+
 	}
 	public static String randomString()
 	{
 		String generatedString=RandomStringUtils.randomAlphabetic(8);
 		return generatedString;
-		
+
 	}
 	public static String randomNum()
 	{
@@ -86,15 +86,15 @@ public class BaseClass {
 		System.out.println(target);
 		FileUtils.copyFile(source, target);
 		System.out.println("Screenshot taken");
-		
+
 	}
-	
+
 	public static void selectDropDown(WebElement element,String text)
 	{
 		Select dropDown=new Select(element);
 		dropDown.selectByVisibleText(text);
 	}
-	//@AfterClass
+	@AfterClass
 	public void tearDown() {
 		driver.quit();
 	}

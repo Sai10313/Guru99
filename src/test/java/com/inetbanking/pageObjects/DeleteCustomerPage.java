@@ -16,8 +16,7 @@ public class DeleteCustomerPage {
 		PageFactory.initElements(rdriver,this);
 	}
 	
-	@FindBy(how=How.LINK_TEXT,using="Delete Customer")
-	WebElement clickOnDelete;
+	
 	
 	@FindBy(how=How.XPATH,using="//input[@name='cusid']")
 	WebElement enterUserId;
@@ -25,14 +24,21 @@ public class DeleteCustomerPage {
 	@FindBy(how=How.XPATH,using="//input[@name='AccSubmit']")
 	WebElement submitUserId;
 	
-	public void clickOnDeleteCustomer() {
-		clickOnDelete.click();
-	}
+	@FindBy(how = How.LINK_TEXT, using = "Home")
+	WebElement backToHome;
+	
+	
 	public void enterId(String custId)
 	{
 		enterUserId.clear();
 		enterUserId.sendKeys(custId);
 	}
+	
+	public void clickHome()
+    {
+    	backToHome.click();
+    }
+	
 	public void submitCustomer()
 	{
 		submitUserId.click();

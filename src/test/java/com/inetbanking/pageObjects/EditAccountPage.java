@@ -3,14 +3,14 @@ package com.inetbanking.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class EditAccountPage {
 	
 WebDriver ldriver;
 	
-	@FindBy(linkText="Edit Account")
-	WebElement clickonEditAccount;
+	
 	
 	@FindBy(name="accountno")
 	WebElement accountNo;
@@ -18,6 +18,8 @@ WebDriver ldriver;
 	@FindBy(name="AccSubmit")
 	WebElement clickOnSubmit;
 	
+	@FindBy(how = How.LINK_TEXT, using = "Home")
+	WebElement backToHome;
 	
 	
 	
@@ -27,15 +29,15 @@ WebDriver ldriver;
 		PageFactory.initElements(rdriver, this);
 	}
 	
-	public void clickEditAccout()
-	{
-		clickonEditAccount.click();;
-	}
-	
 	public void setAccountNo(String acctNo)
 	{
 		accountNo.sendKeys(acctNo);
 	}
+	
+	public void clickHome()
+    {
+    	backToHome.click();
+    }
 	
 	public void submitBtn()
 	{
